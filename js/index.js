@@ -6,6 +6,7 @@ import { ArchiveManager } from './archive.js';
 import { MapController } from './map.js';
 import { FormController } from './forms.js';
 import { UIManager } from './ui.js';
+import { AnimationController, initCounters } from './animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
@@ -17,4 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const archiveManager = new ArchiveManager(dataManager);
     const mapController = new MapController(dataManager);
     const formController = new FormController();
+    const animationController = new AnimationController();
+    
+    // Инициализация анимации счетчиков
+    initCounters();
 });

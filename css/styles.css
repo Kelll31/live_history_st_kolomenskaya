@@ -498,6 +498,19 @@ p, span, a, button, input, textarea {
   margin: 0;
 }
 
+.section-subtitle {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin: var(--spacing-sm) 0 0 0;
+}
+
+/* Section header для легенды карты - по центру */
+.map-legends .section-header {
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
 .map-container {
   width: 100%;
   border-radius: var(--radius-xl);
@@ -1401,32 +1414,114 @@ p, span, a, button, input, textarea {
 }
 
 .legends-grid {
-  display: flex;
-  justify-content: center;
-  gap: var(--spacing-xl);
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  font-size: 14px;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: var(--transition-hover);
+}
+
+.legend-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.legend-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.legend-icon svg {
+  stroke: white;
+  stroke-width: 1.5;
+  fill: none;
+}
+
+.legend-icon.arch-color svg,
+.legend-icon.monum-color svg,
+.legend-icon.museum-color svg,
+.legend-icon.church-color svg,
+.legend-icon.nature-color svg {
+  stroke: white;
+}
+
+.legend-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.legend-title {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 15px;
+}
+
+.legend-desc {
+  font-size: 13px;
   color: var(--text-secondary);
 }
 
-.legend-color {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
-
-.arch-color { background: #FF6B6B; }
+.legend-color { background: #FF6B6B; }
 .monum-color { background: #4ECDC4; }
 .museum-color { background: #45B7D1; }
 .church-color { background: #96CEB4; }
 .nature-color { background: #FFEAA7; }
+
+/* Применяем фоновые цвета к иконкам */
+.legend-icon.arch-color { background: #FF6B6B; }
+.legend-icon.monum-color { background: #4ECDC4; }
+.legend-icon.museum-color { background: #45B7D1; }
+.legend-icon.church-color { background: #96CEB4; }
+.legend-icon.nature-color { background: #FFEAA7; }
+
+/* Map Stats */
+.map-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-xl);
+  padding: var(--spacing-xl);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+}
+
+.map-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-md);
+}
+
+.map-stat-number {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--accent-terracotta);
+}
+
+.map-stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-align: center;
+}
 
 .sort-controls {
   display: flex;
@@ -1652,6 +1747,10 @@ p, span, a, button, input, textarea {
     align-items: flex-start;
     gap: var(--spacing-md);
   }
+  
+  .map-legends .section-header {
+    align-items: center;
+  }
 
  .map-placeholder {
     height: 400px;
@@ -1790,9 +1889,27 @@ p, span, a, button, input, textarea {
   }
   
   .legends-grid {
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
   }
-  
+
+  .legend-item {
+    padding: var(--spacing-sm);
+  }
+
+  .legend-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .map-stats {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .map-stat-number {
+    font-size: 28px;
+  }
+
   .pagination {
     gap: var(--spacing-xs);
   }
@@ -2062,16 +2179,160 @@ p, span, a, button, input, textarea {
     width: 95%;
     max-height: 95vh;
   }
-  
+
   .archive-modal__title {
     font-size: 22px;
   }
-  
+
   .archive-modal__actions {
     flex-direction: column;
   }
-  
+
   .archive-modal__nav {
     display: none;
+  }
+}
+
+/* Values Section */
+.values-section {
+  padding: var(--spacing-xxl) 0;
+  background: var(--bg-secondary);
+}
+
+.values-section h2 {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  color: var(--text-primary);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.value-card {
+  background: var(--bg-primary);
+  padding: var(--spacing-xl);
+  border-radius: 12px;
+  text-align: center;
+  transition: var(--transition-hover);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.value-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-terracotta);
+  border-radius: 50%;
+  color: white;
+}
+
+.value-card h4 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+.value-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Hero Image on All Pages */
+.about-hero .hero__image,
+.archive-hero .hero__image,
+.map-hero .hero__image,
+.news-hero .hero__image {
+  display: block;
+}
+
+.about-hero .hero__image img,
+.archive-hero .hero__image img,
+.map-hero .hero__image img,
+.news-hero .hero__image img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Разное расположение контента для разнообразия */
+/* О проекте - текст слева, фото справа (стандартно) */
+.about-hero .hero__content {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Архив - фото слева, текст справа */
+.archive-hero .hero__content {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+}
+
+.archive-hero .hero__text {
+  direction: ltr;
+}
+
+/* Карта - текст слева, фото справа (стандартно) */
+.map-hero .hero__content {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Новости - фото слева, текст справа */
+.news-hero .hero__content {
+  grid-template-columns: 1fr 1fr;
+  direction: rtl;
+}
+
+.news-hero .hero__text {
+  direction: ltr;
+}
+
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* На мобильных возвращаем стандартное расположение */
+  .about-hero .hero__content,
+  .archive-hero .hero__content,
+  .map-hero .hero__content,
+  .news-hero .hero__content {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+  
+  .about-hero .hero__image,
+  .archive-hero .hero__image,
+  .map-hero .hero__image,
+  .news-hero .hero__image {
+    margin-top: var(--spacing-lg);
+  }
+  
+  .about-hero .hero__image img,
+  .archive-hero .hero__image img,
+  .map-hero .hero__image img,
+  .news-hero .hero__image img {
+    height: 200px;
   }
 }

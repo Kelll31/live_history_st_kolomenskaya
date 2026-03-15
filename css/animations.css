@@ -1,0 +1,407 @@
+/* Плавные анимации для сайта */
+
+/* Базовые классы анимаций */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Задержка для последовательного появления */
+.fade-in.delay-1 { transition-delay: 0.1s; }
+.fade-in.delay-2 { transition-delay: 0.2s; }
+.fade-in.delay-3 { transition-delay: 0.3s; }
+.fade-in.delay-4 { transition-delay: 0.4s; }
+.fade-in.delay-5 { transition-delay: 0.5s; }
+.fade-in.delay-6 { transition-delay: 0.6s; }
+
+/* Анимация для карточек */
+.card-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s ease;
+}
+
+.card-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-animate:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Анимация для заголовков */
+.title-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.title-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимация для изображений */
+.image-animate {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-animate.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Анимация для hero-секции */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимация для значений (values) */
+.value-animate {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.value-animate.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Анимация для timeline */
+.timeline-animate {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.timeline-animate.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Анимация для статистики */
+.stat-animate {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.stat-animate.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Анимация для кнопок */
+.btn-animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-animate::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn-animate:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Анимация для иконок */
+.icon-animate {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.value-card:hover .icon-animate {
+  transform: scale(1.15) rotate(3deg);
+}
+
+/* Пульсация для иконок */
+@keyframes iconPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.value-card:hover .value-icon {
+  animation: iconPulse 0.6s ease-in-out;
+  background: var(--accent-terracotta-dark, #c95a4a);
+}
+
+/* Анимация для навигации */
+.nav-link-animate {
+  position: relative;
+}
+
+.nav-link-animate::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-terracotta);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-animate:hover::after {
+  width: 100%;
+}
+
+/* Анимация для модальных окон */
+.modal-fade {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-fade.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-scale {
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-fade.active .modal-scale {
+  transform: scale(1);
+}
+
+/* Анимация для загрузки (skeleton) */
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 25%,
+    var(--bg-tertiary) 50%,
+    var(--bg-secondary) 75%
+  );
+  background-size: 200px 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+/* Анимация для пульсации */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.pulse-animate {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Анимация для плавного появления снизу */
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимация для плавного появления слева */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Анимация для плавного появления справа */
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Анимация для увеличения при наведении */
+.zoom-hover {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.zoom-hover:hover {
+  transform: scale(1.05);
+}
+
+/* Анимация для поворота при наведении */
+.rotate-hover {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rotate-hover:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+/* Анимация для подчеркивания */
+.underline-animate {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-animate::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-terracotta);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.underline-animate:hover::after {
+  width: 100%;
+}
+
+/* Анимация для бейджей/тегов */
+.badge-animate {
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.badge-animate:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-terracotta-dark, #c95a4a);
+}
+
+/* Анимация для легенды карты */
+.legend-animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.legend-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Анимация для статистики карты */
+.map-stat-animate {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.map-stat-animate.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Анимация для прогресс баров */
+@keyframes progress-fill {
+  from {
+    width: 0;
+  }
+}
+
+.progress-animate {
+  width: 0;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-animate.visible {
+  animation: progress-fill 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Анимация для счетчиков */
+@keyframes count-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.count-animate {
+  display: inline-block;
+}
+
+/* Плавная прокрутка для всей страницы */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Отключаем анимации для пользователей, предпочитающих reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

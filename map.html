@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Карта объектов - Серпуховичи рассказывают</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=c18dae1d-c4d3-4e89-9e8c-55dcbfebc023&lang=ru_RU" type="text/javascript"></script>
 </head>
@@ -17,10 +18,13 @@
                         <span class="tag">ИНТЕРАКТИВНАЯ КАРТА</span>
                         <h1 class="hero__title">КАРТА ОБЪЕКТОВ</h1>
                         <p class="hero__description">
-                            Исследуйте исторические места Серпухова на интерактивной карте. 
-                            Найдите интересующие вас объекты, изучите их историю и посмотрите 
+                            Исследуйте исторические места Серпухова на интерактивной карте.
+                            Найдите интересующие вас объекты, изучите их историю и посмотрите
                             связанные материалы из нашего архива.
                         </p>
+                    </div>
+                    <div class="hero__image">
+                        <img src="images/image.png" alt="Карта Серпухова" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -84,9 +88,9 @@
                             <div class="popup-image" style="background-image: url('images/image.png');"></div>
                             <button class="popup-close">×</button>
                             <div class="popup-content">
-                                <span class="popup-tag">Исторический памятник</span>
+                                <span class="popup-tag">Архитектура</span>
                                 <h3>Соборная гора</h3>
-                                <p>Одно из самых известных мест в истории Серпухова</p>
+                                <p>Одно из самых известных мест в истории Серпухова. Древний кремль города</p>
                                 <button class="btn btn--small">Изучить объект</button>
                                 <a href="#" class="btn-link">Смотреть материалы →</a>
                             </div>
@@ -96,9 +100,45 @@
                             <div class="popup-image" style="background-image: url('images/Вид на Коломенскую улицу.jpg');"></div>
                             <button class="popup-close">×</button>
                             <div class="popup-content">
-                                <span class="popup-tag">Церковь</span>
+                                <span class="popup-tag">Архитектура</span>
                                 <h3>Спасо-Преображенский собор</h3>
-                                <p>Главный храм города, построенный в XVII веке</p>
+                                <p>Главный храм города, построенный в XVII веке на Соборной горе</p>
+                                <button class="btn btn--small">Изучить объект</button>
+                                <a href="#" class="btn-link">Смотреть материалы →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-popup popup-3" data-object="vysotsky-mon">
+                            <div class="popup-image" style="background-image: url('images/h-45559.jpg');"></div>
+                            <button class="popup-close">×</button>
+                            <div class="popup-content">
+                                <span class="popup-tag">Церковь</span>
+                                <h3>Высоцкий монастырь</h3>
+                                <p>Мужской монастырь основанный в 1374 году князем Владимиром Храбрым</p>
+                                <button class="btn btn--small">Изучить объект</button>
+                                <a href="#" class="btn-link">Смотреть материалы →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-popup popup-4" data-object="muzei">
+                            <div class="popup-image" style="background-image: url('images/image.png');"></div>
+                            <button class="popup-close">×</button>
+                            <div class="popup-content">
+                                <span class="popup-tag">Музей</span>
+                                <h3>Историко-художественный музей</h3>
+                                <p>Крупнейший музей города с богатой коллекцией живописи, графики и скульптуры</p>
+                                <button class="btn btn--small">Изучить объект</button>
+                                <a href="#" class="btn-link">Смотреть материалы →</a>
+                            </div>
+                        </div>
+                        
+                        <div class="map-popup popup-5" data-object="park-kultury">
+                            <div class="popup-image" style="background-image: url('images/Вид на Коломенскую улицу.jpg');"></div>
+                            <button class="popup-close">×</button>
+                            <div class="popup-content">
+                                <span class="popup-tag">Парк</span>
+                                <h3>Парк культуры им. О. Степанова</h3>
+                                <p>Центральный парк культуры и отдыха жителей Серпухова</p>
                                 <button class="btn btn--small">Изучить объект</button>
                                 <a href="#" class="btn-link">Смотреть материалы →</a>
                             </div>
@@ -110,26 +150,89 @@
 
         <section class="map-legends">
             <div class="container">
+                <div class="section-header">
+                    <h2>Условные обозначения</h2>
+                    <p class="section-subtitle">На карте отмечены объекты различных категорий</p>
+                </div>
+                
                 <div class="legends-grid">
                     <div class="legend-item">
-                        <div class="legend-color arch-color"></div>
-                        <span>Архитектура</span>
+                        <div class="legend-icon arch-color">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M3 21h18M5 21V7l8-4 8 4v14M8 21v-9a4 4 0 0 1 4-4v0a4 4 0 0 1 4 4v9"/>
+                            </svg>
+                        </div>
+                        <div class="legend-info">
+                            <span class="legend-title">Архитектура</span>
+                            <span class="legend-desc">Исторические здания</span>
+                        </div>
                     </div>
+                    
                     <div class="legend-item">
-                        <div class="legend-color monum-color"></div>
-                        <span>Памятники</span>
+                        <div class="legend-icon monum-color">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 22h20L12 2z"/>
+                                <circle cx="12" cy="14" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="legend-info">
+                            <span class="legend-title">Памятники</span>
+                            <span class="legend-desc">Мемориалы и монументы</span>
+                        </div>
                     </div>
+                    
                     <div class="legend-item">
-                        <div class="legend-color museum-color"></div>
-                        <span>Музеи</span>
+                        <div class="legend-icon museum-color">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <div class="legend-info">
+                            <span class="legend-title">Музеи</span>
+                            <span class="legend-desc">Выставки и экспозиции</span>
+                        </div>
                     </div>
+                    
                     <div class="legend-item">
-                        <div class="legend-color church-color"></div>
-                        <span>Церкви</span>
+                        <div class="legend-icon church-color">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2v20M8 6h8M8 18h8M4 10h16"/>
+                                <path d="M12 2l-4 4h8l-4-4z"/>
+                            </svg>
+                        </div>
+                        <div class="legend-info">
+                            <span class="legend-title">Церкви</span>
+                            <span class="legend-desc">Храмы и соборы</span>
+                        </div>
                     </div>
+                    
                     <div class="legend-item">
-                        <div class="legend-color nature-color"></div>
-                        <span>Природа</span>
+                        <div class="legend-icon nature-color">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                <path d="M12 8v8M8 12h8"/>
+                            </svg>
+                        </div>
+                        <div class="legend-info">
+                            <span class="legend-title">Природа</span>
+                            <span class="legend-desc">Парки и скверы</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="map-stats">
+                    <div class="map-stat-item">
+                        <span class="map-stat-number">18</span>
+                        <span class="map-stat-label">Объектов на карте</span>
+                    </div>
+                    <div class="map-stat-item">
+                        <span class="map-stat-number">5</span>
+                        <span class="map-stat-label">Категорий</span>
+                    </div>
+                    <div class="map-stat-item">
+                        <span class="map-stat-number">100+</span>
+                        <span class="map-stat-label">Фотографий</span>
                     </div>
                 </div>
             </div>
