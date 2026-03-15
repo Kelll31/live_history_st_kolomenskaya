@@ -170,6 +170,52 @@
         </section>
     </main>
 
+    <!-- Modal Search -->
+    <div id="search-modal" class="search-modal">
+        <div class="search-modal__content">
+            <button class="search-modal__close" aria-label="Закрыть поиск">&times;</button>
+            <div class="search-modal__input-wrapper">
+                <input type="text" id="global-search-input" placeholder="Поиск по архиву, новостям и карте..." autofocus>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+            <div id="search-modal-results" class="search-modal__results">
+                <!-- Results will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Share Form -->
+    <div id="share-modal" class="search-modal share-modal">
+        <div class="search-modal__content share-modal__content" style="background: white; border-radius: 8px; padding: 24px; position: relative;">
+            <button class="search-modal__close share-modal__close" aria-label="Закрыть" style="top: 10px; right: 10px;">&times;</button>
+            <div class="participation-text" style="margin-bottom: 24px; text-align: center;">
+                <h2>Поделиться материалом</h2>
+                <p style="font-size: 14px; color: #666;">Станьте соавтором цифрового архива. Заполните форму ниже.</p>
+            </div>
+            <div class="participation-form">
+                <form class="form">
+                    <input type="text" placeholder="Ваше имя" class="form-input">
+                    <input type="email" placeholder="Email для связи" class="form-input">
+                    <textarea placeholder="Расскажите о материале" class="form-textarea" style="min-height: 80px;"></textarea>
+
+                    <div class="upload-area" style="padding: 16px;">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="17 8 12 3 7 8"></polyline>
+                            <line x1="12" y1="3" x2="12" y2="15"></line>
+                        </svg>
+                        <p style="font-size: 12px;">Нажмите или перетащите файлы сюда</p>
+                    </div>
+
+                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: 16px;">Отправить на модерацию</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="partners">
             <div class="container">
