@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архив - Серпуховичи рассказывают</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <h1 class="logo__name">СЕРПУХОВИЧИ РАССКАЗЫВАЮТ</h1>
+                <span class="logo__subtitle">живая история улицы Коломенской</span>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">О проекте</a></li>
+                    <li class="nav__item"><a href="archive.html" class="nav__link active">Архив</a></li>
+                    <li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li>
+                    <li class="nav__item"><a href="news.html" class="nav__link">Новости</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="action__icon search-icon" aria-label="Поиск">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="action__icon accessibility-icon" aria-label="Версия для слабовидящих">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 4.5v15m7.5-7.5h-15"></path>
+                    </svg>
+                </button>
+                <button class="btn btn--outline">ПОДЕЛИТЬСЯ МАТЕРИАЛОМ</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero archive-hero">
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <span class="tag">ЦИФРОВОЙ АРХИВ</span>
+                        <h1 class="hero__title">АРХИВ И БИБЛИОТЕКА</h1>
+                        <p class="hero__description">
+                            Исследуйте богатую коллекцию исторических документов, фотографий и воспоминаний, 
+                            хранящих память о Серпухове. Наш архив содержит более 10 000 оцифрованных материалов.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="archive-filters">
+            <div class="container">
+                <div class="filter-bar">
+                    <button class="filter-btn active">Все материалы</button>
+                    <button class="filter-btn">Фотографии 19 века</button>
+                    <button class="filter-btn">Документы</button>
+                    <button class="filter-btn">Воспоминания</button>
+                    <button class="filter-btn">Видео</button>
+                    <button class="filter-btn">Аудио</button>
+                    <button class="filter-btn">Карты</button>
+                </div>
+                
+                <div class="sort-controls">
+                    <select class="sort-select">
+                        <option>Сортировать по дате</option>
+                        <option>Сортировать по популярности</option>
+                        <option>Сортировать по алфавиту</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="archive-grid-section">
+            <div class="container">
+                <div class="archive-grid">
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Панорама города">
+                            <span class="card-tag">Фотография</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">Начало XX века</div>
+                            <h3 class="card-title">Панорама города с высоты птичьего полета</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Историческое здание">
+                            <span class="card-tag">Документ</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1920-е годы</div>
+                            <h3 class="card-title">Архитектурные особенности старого Серпухова</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Местные жители">
+                            <span class="card-tag">Воспоминания</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1950-е годы</div>
+                            <h3 class="card-title">Рассказы старожилов о послевоенном Серпухове</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Местные события">
+                            <span class="card-tag">Фотография</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1930-е годы</div>
+                            <h3 class="card-title">Городские праздники и народные гуляния</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Промышленность">
+                            <span class="card-tag">Документ</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1940-е годы</div>
+                            <h3 class="card-title">Промышленное развитие в военные годы</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Культура">
+                            <span class="card-tag">Видео</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1960-е годы</div>
+                            <h3 class="card-title">Культурная жизнь в доме культуры</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Образование">
+                            <span class="card-tag">Фотография</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1970-е годы</div>
+                            <h3 class="card-title">Школьные годы в Серпухове</h3>
+                        </div>
+                    </a>
+                    
+                    <a href="#" class="archive-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Транспорт">
+                            <span class="card-tag">Документ</span>
+                        </div>
+                        <div class="card-text">
+                            <div class="card-year">1980-е годы</div>
+                            <h3 class="card-title">Развитие транспортной системы</h3>
+                        </div>
+                    </a>
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-btn">← Предыдущая</button>
+                    <span class="pagination-numbers">
+                        <button class="pagination-number active">1</button>
+                        <button class="pagination-number">2</button>
+                        <button class="pagination-number">3</button>
+                        <span class="pagination-dots">...</span>
+                        <button class="pagination-number">10</button>
+                    </span>
+                    <button class="pagination-btn">Следующая →</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="partners">
+            <div class="container">
+                <h3>Партнеры проекта</h3>
+                <div class="partners-list">
+                    <div class="partner-logo">Партнер 1</div>
+                    <div class="partner-logo">Партнер 2</div>
+                    <div class="partner-logo">Партнер 3</div>
+                    <div class="partner-logo">Партнер 4</div>
+                    <div class="partner-logo">Партнер 5</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4 class="logo__name">СЕРПУХОВИЧИ РАССКАЗЫВАЮТ</h4>
+                        <p>Живая история улицы Коломенской</p>
+                        <p class="copyright">2024 © Проект реализован при поддержке гранта</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Разделы</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="about.html">О проекте</a></li>
+                            <li><a href="archive.html">Архив</a></li>
+                            <li><a href="map.html">Карта</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Информация</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Пользовательское соглашение</a></li>
+                            <li><a href="#">Политика конфиденциальности</a></li>
+                            <li><a href="#">Отчеты проекта</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Контакты</h4>
+                        <p>info@serpuhov-heritage.ru</p>
+                        <p>+7 (495) 123-45-67</p>
+                        <p>г. Серпухов, ул. Примерная, д. 1</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="ВКонтакте">VK</a>
+                            <a href="#" aria-label="Telegram">TG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

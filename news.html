@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости - Серпуховичи рассказывают</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__logo">
+                <h1 class="logo__name">СЕРПУХОВИЧИ РАССКАЗЫВАЮТ</h1>
+                <span class="logo__subtitle">живая история улицы Коломенской</span>
+            </div>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Главная</a></li>
+                    <li class="nav__item"><a href="about.html" class="nav__link">О проекте</a></li>
+                    <li class="nav__item"><a href="archive.html" class="nav__link">Архив</a></li>
+                    <li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li>
+                    <li class="nav__item"><a href="news.html" class="nav__link active">Новости</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="action__icon search-icon" aria-label="Поиск">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button class="action__icon accessibility-icon" aria-label="Версия для слабовидящих">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M12 4.5v15m7.5-7.5h-15"></path>
+                    </svg>
+                </button>
+                <button class="btn btn--outline">ПОДЕЛИТЬСЯ МАТЕРИАЛОМ</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero news-hero">
+            <div class="container">
+                <div class="hero__content">
+                    <div class="hero__text">
+                        <span class="tag">НОВОСТИ И СОБЫТИЯ</span>
+                        <h1 class="hero__title">НОВОСТИ ПРОЕКТА</h1>
+                        <p class="hero__description">
+                            Будьте в курсе последних событий проекта "Наследие Серпухова". 
+                            Получайте информацию о новых поступлениях в архив, предстоящих 
+                            мероприятиях и важных открытиях.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-filters">
+            <div class="container">
+                <div class="filter-bar">
+                    <button class="filter-btn active">Все новости</button>
+                    <button class="filter-btn">Архивные находки</button>
+                    <button class="filter-btn">Мероприятия</button>
+                    <button class="filter-btn">Исследования</button>
+                    <button class="filter-btn">Обновления</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-grid-section">
+            <div class="container">
+                <div class="news-grid">
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80" alt="Новая архивная находка">
+                        </div>
+                        <div class="card-content">
+                            <span class="news-tag">Архивные находки</span>
+                            <time class="news-date">15 марта 2024</time>
+                            <h3 class="news-title">Новая коллекция фотографий начала XX века</h3>
+                            <p class="news-excerpt">
+                                В семейном архиве одной из серпуховских семей были обнаружены 
+                                уникальные фотографии, запечатлевшие повседневную жизнь 
+                                города в начале XX века. Коллекция из 47 снимков уже 
+                                оцифрована и доступна в нашем архиве.
+                            </p>
+                            <a href="#" class="read-more">Читать далее →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80" alt="Выставка в музее">
+                        </div>
+                        <div class="card-content">
+                            <span class="news-tag">Мероприятия</span>
+                            <time class="news-date">10 марта 2024</time>
+                            <h3 class="news-title">Открытие выставки "История в деталях"</h3>
+                            <p class="news-excerpt">
+                                В Серпуховском историко-художественном музее открылась 
+                                выставка, подготовленная совместно с нашей командой. 
+                                Экспозиция включает более 100 экспонатов из цифрового архива, 
+                                многие из которых впервые представлены публике.
+                            </p>
+                            <a href="#" class="read-more">Читать далее →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80" alt="Новый раздел архива">
+                        </div>
+                        <div class="card-content">
+                            <span class="news-tag">Обновления</span>
+                            <time class="news-date">5 марта 2024</time>
+                            <h3 class="news-title">Добавлен новый раздел "Военные годы"</h3>
+                            <p class="news-excerpt">
+                                Мы рады сообщить о запуске нового раздела архива, посвященного 
+                                периоду Великой Отечественной войны. Раздел включает документы, 
+                                фотографии и воспоминания жителей Серпухова, внесших вклад 
+                                в победу.
+                            </p>
+                            <a href="#" class="read-more">Читать далее →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80" alt="Исследовательская работа">
+                        </div>
+                        <div class="card-content">
+                            <span class="news-tag">Исследования</span>
+                            <time class="news-date">1 марта 2024</time>
+                            <h3 class="news-title">Новое исследование: Архитектурные особенности</h3>
+                            <p class="news-excerpt">
+                                Научный сотрудник нашего проекта завершил масштабное 
+                                исследование архитектурных особенностей Серпухова второй 
+                                половины XIX века. Результаты будут опубликованы в 
+                                ближайшем номере научного журнала "История регионов".
+                            </p>
+                            <a href="#" class="read-more">Читать далее →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80" alt="Образовательная программа">
+                        </div>
+                        <div class="card-content">
+                            <span class="news-tag">Мероприятия</span>
+                            <time class="news-date">25 февраля 2024</time>
+                            <h3 class="news-title">Старт образовательной программы для школьников</h3>
+                            <p class="news-excerpt">
+                                В рамках проекта стартовала образовательная программа 
+                                "Юный краевед", направленная на знакомство школьников 
+                                с историей родного города. Учащиеся смогут принять участие 
+                                в экскурсиях и мастер-классах.
+                            </p>
+                            <a href="#" class="read-more">Читать далее →</a>
+                        </div>
+                    </article>
+                    
+                    <article class="news-card">
+                        <div class="card-image">
+                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=600&q=80" alt="Новый партнёр">
+                        </div>
+                        <div class="card-content">
+                            <span class="news-tag">Обновления</span>
+                            <time class="news-date">20 февраля 2024</time>
+                            <h3 class="news-title">Новый партнёр проекта - областная библиотека</h3>
+                            <p class="news-excerpt">
+                                Мы рады объявить о начале сотрудничества с областной 
+                                библиотекой. В рамках партнёрства планируется оцифровка 
+                                редких книг и документов, относящихся к истории Серпухова.
+                            </p>
+                            <a href="#" class="read-more">Читать далее →</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-btn">← Предыдущая</button>
+                    <span class="pagination-numbers">
+                        <button class="pagination-number active">1</button>
+                        <button class="pagination-number">2</button>
+                        <button class="pagination-number">3</button>
+                        <span class="pagination-dots">...</span>
+                        <button class="pagination-number">5</button>
+                    </span>
+                    <button class="pagination-btn">Следующая →</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="partners">
+            <div class="container">
+                <h3>Партнеры проекта</h3>
+                <div class="partners-list">
+                    <div class="partner-logo">Партнер 1</div>
+                    <div class="partner-logo">Партнер 2</div>
+                    <div class="partner-logo">Партнер 3</div>
+                    <div class="partner-logo">Партнер 4</div>
+                    <div class="partner-logo">Партнер 5</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-main">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4 class="logo__name">СЕРПУХОВИЧИ РАССКАЗЫВАЮТ</h4>
+                        <p>Живая история улицы Коломенской</p>
+                        <p class="copyright">2024 © Проект реализован при поддержке гранта</p>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Разделы</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="about.html">О проекте</a></li>
+                            <li><a href="archive.html">Архив</a></li>
+                            <li><a href="map.html">Карта</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Информация</h4>
+                        <ul class="footer-links">
+                            <li><a href="#">Пользовательское соглашение</a></li>
+                            <li><a href="#">Политика конфиденциальности</a></li>
+                            <li><a href="#">Отчеты проекта</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Контакты</h4>
+                        <p>info@serpuhov-heritage.ru</p>
+                        <p>+7 (495) 123-45-67</p>
+                        <p>г. Серпухов, ул. Примерная, д. 1</p>
+                        <div class="social-links">
+                            <a href="#" aria-label="ВКонтакте">VK</a>
+                            <a href="#" aria-label="Telegram">TG</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
