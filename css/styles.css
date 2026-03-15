@@ -251,10 +251,46 @@ p, span, a, button, input, textarea {
   padding: var(--spacing-sm);
   border-radius: var(--radius-sm);
   transition: var(--transition-hover);
+  position: relative;
 }
 
 .action__icon:hover {
-  background: rgba(0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.05);
+  transform: scale(1.1);
+}
+
+/* Анимация для кнопки поиска */
+.action__icon.search-icon {
+  overflow: visible;
+}
+
+.action__icon.search-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: var(--accent-terracotta);
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.action__icon.search-icon:hover::before {
+  width: 60px;
+  height: 60px;
+}
+
+.action__icon.search-icon svg {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.action__icon.search-icon:hover svg {
+  transform: scale(1.2);
 }
 
 .btn {
@@ -975,15 +1011,15 @@ p, span, a, button, input, textarea {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.98);
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
   z-index: var(--z-modal);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding-top: 10vh;
+  justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all var(--transition-smooth);
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .search-modal.active {
@@ -991,75 +1027,141 @@ p, span, a, button, input, textarea {
   visibility: visible;
 }
 
+/* Анимация поля поиска */
+.search-modal__content {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 var(--spacing-xl);
+  transform: translateX(100px) scale(0.9);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.3s ease;
+}
+
+.search-modal.active .search-modal__content {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
 .search-modal__close {
   position: absolute;
-  top: var(--spacing-xl);
-  right: var(--spacing-xl);
-  background: none;
-  border: none;
-  font-size: 40px;
+  top: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-size: 28px;
   cursor: pointer;
-  color: var(--text-primary);
-  transition: var(--transition-hover);
+  color: white;
+  transition: all 0.3s ease;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-modal__close:hover {
-  color: var(--accent-terracotta);
-  transform: rotate(90deg);
-}
-
-.search-modal__content {
-  width: 100%;
-  max-width: 800px;
-  padding: 0 var(--spacing-xl);
+  background: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  transform: rotate(90deg) scale(1.1);
 }
 
 .search-modal__input-wrapper {
   position: relative;
   width: 100%;
-  margin-bottom: var(--spacing-xxxl);
 }
 
 .search-modal__input-wrapper input {
   width: 100%;
   font-family: var(--font-serif);
-  font-size: clamp(24px, 4vw, 40px);
-  padding: var(--spacing-md) 0;
-  padding-right: 50px;
+  font-size: clamp(28px, 5vw, 42px);
+  padding: var(--spacing-lg) var(--spacing-xl);
+  padding-right: 60px;
   border: none;
-  border-bottom: 2px solid var(--text-primary);
-  background: transparent;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.95);
   outline: none;
   color: var(--text-primary);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.search-modal__input-wrapper input:focus {
+  background: white;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.search-modal__input-wrapper input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
 }
 
 .search-modal__input-wrapper svg {
   position: absolute;
-  right: 10px;
+  right: 20px;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--text-primary);
+  color: var(--accent-terracotta);
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
 }
 
 .search-modal__results {
   max-height: 60vh;
   overflow-y: auto;
   padding-right: var(--spacing-sm);
+  margin-top: var(--spacing-lg);
+}
+
+/* Скроллбар для результатов */
+.search-modal__results::-webkit-scrollbar {
+  width: 6px;
+}
+
+.search-modal__results::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.search-modal__results::-webkit-scrollbar-thumb {
+  background: var(--accent-terracotta);
+  border-radius: 3px;
+}
+
+.search-modal__results::-webkit-scrollbar-thumb:hover {
+  background: #c95a4a;
 }
 
 .search-category {
   margin-bottom: var(--spacing-xl);
+  animation: fadeInUp 0.4s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.search-category:nth-child(1) { animation-delay: 0.1s; }
+.search-category:nth-child(2) { animation-delay: 0.2s; }
+.search-category:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .search-category h4 {
   font-family: var(--font-sans);
   text-transform: uppercase;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   letter-spacing: 1px;
   margin-bottom: var(--spacing-md);
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding-bottom: var(--spacing-xs);
 }
 
@@ -1074,11 +1176,20 @@ p, span, a, button, input, textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.search-category li:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(8px);
 }
 
 .search-category a {
   font-size: 18px;
-  color: var(--text-primary);
+  color: white;
   text-decoration: none;
   transition: var(--transition-hover);
 }
@@ -1089,15 +1200,18 @@ p, span, a, button, input, textarea {
 
 .tag-small {
   font-size: 11px;
-  background: var(--bg-tertiary);
-  padding: 2px 6px;
-  border-radius: var(--radius-sm);
-  color: var(--text-muted);
+  background: var(--accent-terracotta);
+  padding: 4px 10px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .no-results {
   text-align: center;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
   margin-top: var(--spacing-xxxl);
 }
@@ -1110,7 +1224,33 @@ p, span, a, button, input, textarea {
 
 .share-modal__content {
   box-shadow: 0 20px 40px var(--shadow-heavy);
-  max-width: 600px;
+  max-width: 500px;
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.3s ease;
+  position: relative;
+}
+
+.share-modal.active .share-modal__content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.share-modal__close {
+  top: 16px !important;
+  right: 16px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: transparent !important;
+}
+
+.share-modal__close:hover {
+  background: var(--accent-terracotta) !important;
 }
 
 /* Modal Styles */
@@ -1931,6 +2071,15 @@ p, span, a, button, input, textarea {
     height: 30px;
     font-size: 14px;
   }
+  
+  /* Search modal на планшетах */
+  .search-modal__content {
+    max-width: 600px;
+  }
+  
+  .search-modal__input-wrapper input {
+    font-size: 24px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1973,6 +2122,32 @@ p, span, a, button, input, textarea {
 @media (max-width: 480px) {
   .hero__image img {
     max-height: 250px;
+  }
+  
+  /* Search modal на мобильных */
+  .search-modal__content {
+    max-width: 95%;
+    padding: 0 var(--spacing-md);
+  }
+  
+  .search-modal__input-wrapper input {
+    font-size: 20px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+  
+  .search-modal__close {
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .search-category li {
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+  
+  .search-category a {
+    font-size: 16px;
   }
 }
 

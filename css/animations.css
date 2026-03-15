@@ -357,6 +357,33 @@
   transform: scale(1);
 }
 
+/* Анимация для поиска */
+.search-input-animate {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+              transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.search-input-animate.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Пульсация для кнопки поиска */
+@keyframes searchPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.search-icon-pulse {
+  animation: searchPulse 2s ease-in-out infinite;
+}
+
 /* Анимация для прогресс баров */
 @keyframes progress-fill {
   from {
