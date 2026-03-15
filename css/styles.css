@@ -353,7 +353,7 @@ p, span, a, button, input, textarea {
 }
 
 .btn-link::after {
-  content: '→';
+  content: '';
   margin-left: var(--spacing-sm);
   transition: var(--transition-hover);
 }
@@ -576,6 +576,13 @@ p, span, a, button, input, textarea {
   top: 25%;
   left: 35%;
 }
+
+/* Позиции для разных popup */
+.map-popup.popup-1 { top: 20%; left: 30%; }
+.map-popup.popup-2 { top: 15%; left: 45%; }
+.map-popup.popup-3 { top: 10%; left: 20%; }
+.map-popup.popup-4 { top: 25%; left: 55%; }
+.map-popup.popup-5 { top: 30%; left: 40%; }
 
 .popup-image {
   width: 100%;

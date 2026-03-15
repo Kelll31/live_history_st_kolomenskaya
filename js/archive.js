@@ -200,7 +200,7 @@ export class ArchiveManager {
                     <time class="news-date">${item.date}</time>
                     <h3 class="news-title">${item.title}</h3>
                     <p class="news-excerpt">${item.excerpt}</p>
-                    <a href="#" class="read-more">Читать далее →</a>
+                    <a href="#" class="read-more">Читать далее </a>
                 </div>
             `;
             this.newsGrid.appendChild(card);
