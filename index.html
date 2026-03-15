@@ -1,47 +1,19 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Серпуховичи рассказывают: живая история улицы Коломенской</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=c18dae1d-c4d3-4e89-9e8c-55dcbfebc023&lang=ru_RU" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=c18dae1d-c4d3-4e89-9e8c-55dcbfebc023&lang=ru_RU"
+        type="text/javascript"></script>
 </head>
-<body>
-    <header class="header">
-        <div class="container">
-            <div class="header__logo">
-                <h1 class="logo__name">СЕРПУХОВИЧИ РАССКАЗЫВАЮТ</h1>
-                <span class="logo__subtitle">живая история улицы Коломенской</span>
-            </div>
-            
-            <nav class="header__nav">
-                <ul class="nav__list">
-                    <li class="nav__item"><a href="about.html" class="nav__link">О проекте</a></li>
-                    <li class="nav__item"><a href="archive.html" class="nav__link">Архив</a></li>
-                    <li class="nav__item"><a href="map.html" class="nav__link">Карта</a></li>
-                    <li class="nav__item"><a href="news.html" class="nav__link">Новости</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header__actions">
-                <button class="action__icon search-icon" aria-label="Поиск">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-                <button class="action__icon accessibility-icon" aria-label="Версия для слабовидящих">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M12 4.5v15m7.5-7.5h-15"></path>
-                    </svg>
-                </button>
-                <button class="btn btn--outline">ПОДЕЛИТЬСЯ МАТЕРИАЛОМ</button>
-            </div>
-        </div>
-    </header>
 
+<body>
     <main>
         <section class="hero">
             <div class="container">
@@ -51,48 +23,54 @@
                         <h1 class="hero__title">НАСЛЕДИЕ СЕРПУХОВА</h1>
                         <h2 class="hero__subtitle">ИСТОРИЯ, КОТОРАЯ ЖИВЕТ</h2>
                         <p class="hero__description">
-                            Открытая цифровая платформа, объединяющая исторические документы, фотографии и воспоминания жителей. 
+                            Открытая цифровая платформа, объединяющая исторические документы, фотографии и воспоминания
+                            жителей.
                             Изучайте локальную идентичность города и становитесь соавторами его цифровой летописи.
                         </p>
                         <div class="hero__buttons">
                             <button class="btn btn--primary">ИССЛЕДОВАТЬ АРХИВ</button>
-                            <a href="#" class="btn-link">Смотреть карту →</a>
+                            <a href="#" class="btn-link">Смотреть карту</a>
                         </div>
                     </div>
                     <div class="hero__image">
-                        <img src="images/image.png" alt="Улица Коломенская" loading="lazy">
+                        <img src="images/Вид на Коломенскую улицу.jpg" alt="Улица Коломенская" loading="lazy">
                     </div>
-                
-                <div class="news-ticker">
-                    <div class="ticker__header">
-                        <h3>Актуальное:</h3>
-                    </div>
-                    <div class="ticker__items">
-                        <div class="ticker__item">
-                            <div class="ticker__thumb" style="background-image: url('https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=60&q=80');"></div>
-                            <div class="ticker__content">
-                                <h4>Открытие выставки</h4>
-                                <p>Новая экспозиция в музее...</p>
-                            </div>
+
+                    <div class="news-ticker">
+                        <div class="ticker__header">
+                            <h3>Актуальное:</h3>
                         </div>
-                        <div class="ticker__item">
-                            <div class="ticker__thumb" style="background-image: url('https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=60&q=80');"></div>
-                            <div class="ticker__content">
-                                <h4>Археологические раскопки</h4>
-                                <p>Новые находки в центре...</p>
+                        <div class="ticker__items">
+                            <div class="ticker__item">
+                                <div class="ticker__thumb"
+                                    style="background-image: url('images/image.png');">
+                                </div>
+                                <div class="ticker__content">
+                                    <h4>Открытие выставки</h4>
+                                    <p>Новая экспозиция в музее...</p>
+                                </div>
+                            </div>
+                            <div class="ticker__item">
+                                <div class="ticker__thumb"
+                                    style="background-image: url('images/h-45559.jpg');">
+                                </div>
+                                <div class="ticker__content">
+                                    <h4>Археологические раскопки</h4>
+                                    <p>Новые находки в центре...</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
         <section class="about">
             <div class="container">
                 <blockquote class="quote">
-                    "Сохраня историю, мы создаем будущее. Каждый документ, каждая фотография, каждое воспоминание - это кирпичик в здании нашей общей памяти."
+                    "Сохраня историю, мы создаем будущее. Каждый документ, каждая фотография, каждое воспоминание - это
+                    кирпичик в здании нашей общей памяти."
                 </blockquote>
-                
+
                 <div class="stats">
                     <div class="stat__item">
                         <div class="stat__number">10 000+</div>
@@ -120,7 +98,7 @@
                     <h2>Карта объектов</h2>
                     <a href="#" class="btn-link">Открыть карту целиком →</a>
                 </div>
-                
+
                 <div class="map-container">
                     <div id="yandex-map" style="width: 100%; height: 500px;"></div>
                     <div class="map-placeholder">
@@ -128,10 +106,12 @@
                         <div class="map-pin pin-1 pulse-animation"></div>
                         <div class="map-pin pin-2 pulse-animation"></div>
                         <div class="map-pin pin-3 pulse-animation"></div>
-                        
+
                         <!-- Popup карточки -->
                         <div class="map-popup popup-1">
-                            <div class="popup-image" style="background-image: url('https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=300&q=80');"></div>
+                            <div class="popup-image"
+                                style="background-image: url('images/image.png');">
+                            </div>
                             <button class="popup-close">×</button>
                             <div class="popup-content">
                                 <span class="popup-tag">Исторический памятник</span>
@@ -148,7 +128,7 @@
         <section class="archive">
             <div class="container">
                 <h2>Архив и Библиотека</h2>
-                
+
                 <div class="filter-bar">
                     <button class="filter-btn active">Все материалы</button>
                     <button class="filter-btn">Фотографии 19 века</button>
@@ -156,11 +136,12 @@
                     <button class="filter-btn">Воспоминания</button>
                     <button class="filter-btn">Видео</button>
                 </div>
-                
+
                 <div class="archive-grid">
                     <a href="#" class="archive-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Панорама города" loading="lazy">
+                            <img src="images/Вид на Коломенскую улицу.jpg"
+                                alt="Панорама города" loading="lazy">
                             <span class="card-tag">Фотография</span>
                         </div>
                         <div class="card-text">
@@ -168,10 +149,11 @@
                             <h3 class="card-title">Панорама города с высоты птичьего полета</h3>
                         </div>
                     </a>
-                    
+
                     <a href="#" class="archive-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Историческое здание" loading="lazy">
+                            <img src="images/h-45559.jpg"
+                                alt="Историческое здание" loading="lazy">
                             <span class="card-tag">Документ</span>
                         </div>
                         <div class="card-text">
@@ -179,10 +161,11 @@
                             <h3 class="card-title">Архитектурные особенности старого Серпухова</h3>
                         </div>
                     </a>
-                    
+
                     <a href="#" class="archive-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Местные жители" loading="lazy">
+                            <img src="images/image.png"
+                                alt="Местные жители" loading="lazy">
                             <span class="card-tag">Воспоминания</span>
                         </div>
                         <div class="card-text">
@@ -190,10 +173,11 @@
                             <h3 class="card-title">Рассказы старожилов о послевоенном Серпухове</h3>
                         </div>
                     </a>
-                    
+
                     <a href="#" class="archive-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Местные события" loading="lazy">
+                            <img src="images/Вид на Коломенскую улицу.jpg"
+                                alt="Местные события" loading="lazy">
                             <span class="card-tag">Фотография</span>
                         </div>
                         <div class="card-text">
@@ -201,10 +185,11 @@
                             <h3 class="card-title">Городские праздники и народные гуляния</h3>
                         </div>
                     </a>
-                    
+
                     <a href="#" class="archive-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Промышленность" loading="lazy">
+                            <img src="images/h-45559.jpg"
+                                alt="Промышленность" loading="lazy">
                             <span class="card-tag">Документ</span>
                         </div>
                         <div class="card-text">
@@ -212,10 +197,11 @@
                             <h3 class="card-title">Промышленное развитие в военные годы</h3>
                         </div>
                     </a>
-                    
+
                     <a href="#" class="archive-card">
                         <div class="card-image">
-                            <img src="https://images.unsplash.com/photo-1547448415-e9f5b28e570d?w=400&q=80" alt="Культура" loading="lazy">
+                            <img src="images/image.png"
+                                alt="Культура" loading="lazy">
                             <span class="card-tag">Видео</span>
                         </div>
                         <div class="card-text">
@@ -233,27 +219,29 @@
                     <div class="participation-text">
                         <h2>Сохраним историю вместе</h2>
                         <p>
-                            Станьте соавтором цифрового архива. Поделитесь историей своей семьи, 
-                            старыми фотографиями или уникальными воспоминаниями о Серпухове. 
+                            Станьте соавтором цифрового архива. Поделитесь историей своей семьи,
+                            старыми фотографиями или уникальными воспоминаниями о Серпухове.
                             Каждая деталь имеет значение для формирования общей памяти.
                         </p>
                     </div>
-                    
+
                     <div class="participation-form">
                         <form class="form">
                             <input type="text" placeholder="Ваше имя" class="form-input">
                             <input type="email" placeholder="Email для связи" class="form-input">
-                            <textarea placeholder="Расскажите о материале, которым хотите поделиться" class="form-textarea"></textarea>
-                            
+                            <textarea placeholder="Расскажите о материале, которым хотите поделиться"
+                                class="form-textarea"></textarea>
+
                             <div class="upload-area">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
                                     <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                                     <polyline points="17 8 12 3 7 8"></polyline>
                                     <line x1="12" y1="3" x2="12" y2="15"></line>
                                 </svg>
                                 <p>Перетащите фото или документы сюда, или нажмите для выбора</p>
                             </div>
-                            
+
                             <button type="submit" class="btn btn--primary btn--full">Отправить на модерацию</button>
                         </form>
                     </div>
@@ -267,7 +255,8 @@
         <div class="search-modal__content">
             <button class="search-modal__close" aria-label="Закрыть поиск">&times;</button>
             <div class="search-modal__input-wrapper">
-                <input type="text" id="global-search-input" placeholder="Поиск по архиву, новостям и карте..." autofocus>
+                <input type="text" id="global-search-input" placeholder="Поиск по архиву, новостям и карте..."
+                    autofocus>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -281,8 +270,10 @@
 
     <!-- Modal Share Form -->
     <div id="share-modal" class="search-modal share-modal">
-        <div class="search-modal__content share-modal__content" style="background: white; border-radius: 8px; padding: 24px; position: relative;">
-            <button class="search-modal__close share-modal__close" aria-label="Закрыть" style="top: 10px; right: 10px;">&times;</button>
+        <div class="search-modal__content share-modal__content"
+            style="background: white; border-radius: 8px; padding: 24px; position: relative;">
+            <button class="search-modal__close share-modal__close" aria-label="Закрыть"
+                style="top: 10px; right: 10px;">&times;</button>
             <div class="participation-text" style="margin-bottom: 24px; text-align: center;">
                 <h2>Поделиться материалом</h2>
                 <p style="font-size: 14px; color: #666;">Станьте соавтором цифрового архива. Заполните форму ниже.</p>
@@ -291,10 +282,12 @@
                 <form class="form">
                     <input type="text" placeholder="Ваше имя" class="form-input">
                     <input type="email" placeholder="Email для связи" class="form-input">
-                    <textarea placeholder="Расскажите о материале" class="form-textarea" style="min-height: 80px;"></textarea>
+                    <textarea placeholder="Расскажите о материале" class="form-textarea"
+                        style="min-height: 80px;"></textarea>
 
                     <div class="upload-area" style="padding: 16px;">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
                             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                             <polyline points="17 8 12 3 7 8"></polyline>
                             <line x1="12" y1="3" x2="12" y2="15"></line>
@@ -302,68 +295,14 @@
                         <p style="font-size: 12px;">Нажмите или перетащите файлы сюда</p>
                     </div>
 
-                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: 16px;">Отправить на модерацию</button>
+                    <button type="submit" class="btn btn--primary btn--full" style="margin-top: 16px;">Отправить на
+                        модерацию</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="partners">
-            <div class="container">
-                <h3>Партнеры проекта</h3>
-                <div class="partners-list">
-                    <div class="partner-logo">Партнер 1</div>
-                    <div class="partner-logo">Партнер 2</div>
-                    <div class="partner-logo">Партнер 3</div>
-                    <div class="partner-logo">Партнер 4</div>
-                    <div class="partner-logo">Партнер 5</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-main">
-            <div class="container">
-                <div class="footer-grid">
-                    <div class="footer-column">
-                        <h4 class="logo__name">СЕРПУХОВИЧИ РАССКАЗЫВАЮТ</h4>
-                        <p>Живая история улицы Коломенской</p>
-                        <p class="copyright">2026-2027 © Проект реализован при поддержке гранта</p>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Разделы</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">О проекте</a></li>
-                            <li><a href="#">Карта</a></li>
-                            <li><a href="#">Архив</a></li>
-                            <li><a href="#">Новости</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Информация</h4>
-                        <ul class="footer-links">
-                            <li><a href="#">Пользовательское соглашение</a></li>
-                            <li><a href="#">Политика конфиденциальности</a></li>
-                            <li><a href="#">Отчеты проекта</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-column">
-                        <h4>Контакты</h4>
-                        <p>info@serpuhov-heritage.ru</p>
-                        <p>+7 (495) 123-45-67</p>
-                        <p>г. Серпухов, ул. Примерная, д. 1</p>
-                        <div class="social-links">
-                            <a href="#" aria-label="ВКонтакте">VK</a>
-                            <a href="#" aria-label="Telegram">TG</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-<script src="script.js"></script>
+    <script src="js/index.js" type="module"></script>
 </body>
+
 </html>
